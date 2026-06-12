@@ -25,6 +25,14 @@ export const Layout: React.FC<LayoutProps> = ({
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-emerald-500/30 selection:text-white">
+      {/* Skip to Content link for Keyboard & Screen Reader Users */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-emerald-500 focus:text-slate-950 focus:px-4 focus:py-2.5 focus:rounded-2xl focus:font-black focus:outline-none"
+      >
+        Skip to Content
+      </a>
+
       {/* Dynamic Background Gradients */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/40 pointer-events-none z-0" />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none z-0" />
@@ -69,7 +77,7 @@ export const Layout: React.FC<LayoutProps> = ({
       <div className="relative z-10 flex-1 max-w-7xl w-full mx-auto flex flex-col md:flex-row">
         {/* Desktop Sidebar */}
         <aside className="hidden md:block w-64 border-r border-slate-900/60 p-6 flex-shrink-0">
-          <nav className="space-y-1.5">
+          <nav aria-label="Sidebar navigation" className="space-y-1.5">
             {menuItems.map((item) => {
               const Icon = item.icon
               const isActive = activeTab === item.id
@@ -83,7 +91,7 @@ export const Layout: React.FC<LayoutProps> = ({
                       : 'text-slate-400 hover:text-slate-100 hover:bg-slate-900/50 border border-transparent'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 transition-transform duration-300 ${isActive ? 'scale-110 text-emerald-400' : 'group-hover:scale-110'}`} />
+                  <Icon className={`w-4 h-4 transition-transform duration-300 ${isActive ? 'scale-110 text-emerald-400' : 'group-hover:scale-110'}`} aria-hidden="true" />
                   {item.label}
                 </button>
               )
@@ -100,7 +108,7 @@ export const Layout: React.FC<LayoutProps> = ({
         </aside>
 
         {/* Content Area */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 pb-24 md:pb-8 overflow-y-auto">
+        <main id="main-content" className="flex-1 p-4 sm:p-6 lg:p-8 pb-24 md:pb-8 overflow-y-auto">
           <div className="max-w-4xl mx-auto space-y-6">
             {children}
           </div>
@@ -108,7 +116,7 @@ export const Layout: React.FC<LayoutProps> = ({
       </div>
 
       {/* Mobile Bottom Navigation Bar */}
-      <nav className="md:hidden fixed bottom-0 inset-x-0 z-50 bg-slate-950/95 backdrop-blur-md border-t border-slate-900 px-4 py-2 flex justify-around shadow-2xl">
+      <nav aria-label="Mobile navigation bar" className="md:hidden fixed bottom-0 inset-x-0 z-50 bg-slate-950/95 backdrop-blur-md border-t border-slate-900 px-4 py-2 flex justify-around shadow-2xl">
         {menuItems.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.id
@@ -120,12 +128,19 @@ export const Layout: React.FC<LayoutProps> = ({
                 isActive ? 'text-emerald-400' : 'text-slate-500'
               }`}
             >
-              <Icon className="w-5 h-5" />
+              <Icon className="w-5 h-5" aria-hidden="true" />
               <span className="text-[9px] font-bold tracking-tight">{item.label.split(' ')[0]}</span>
             </button>
           )
         })}
       </nav>
+
+      {/* Footer Landmark */}
+      <footer className="relative z-10 border-t border-slate-900/60 bg-slate-950/40 py-6 text-center">
+        <div className="max-w-7xl mx-auto px-4 text-[10px] text-slate-400 font-semibold leading-normal">
+          &copy; {new Date().getFullYear()} Carbonly. All rights reserved. Built client-side for absolute privacy.
+        </div>
+      </footer>
     </div>
   )
 }

@@ -211,7 +211,7 @@ export const LogActivity: React.FC<LogActivityProps> = ({ logs, onAddLog, onDele
                       : 'border-slate-850 text-slate-400 hover:text-slate-200 hover:border-slate-700/60'
                   }`}
                 >
-                  <Icon className="w-4 h-4 pointer-events-none" />
+                  <Icon className="w-4 h-4 pointer-events-none" aria-hidden="true" />
                   <span className="text-[10px] font-bold capitalize pointer-events-none">{cat}</span>
                 </button>
               )
@@ -298,6 +298,7 @@ export const LogActivity: React.FC<LogActivityProps> = ({ logs, onAddLog, onDele
                 <p 
                   id="amount-error" 
                   role="alert" 
+                  aria-live="assertive"
                   className="text-[10px] font-bold text-rose-500 mt-1.5 flex items-center gap-1"
                 >
                   <span>⚠️</span> {errors.amount}
@@ -315,7 +316,7 @@ export const LogActivity: React.FC<LogActivityProps> = ({ logs, onAddLog, onDele
                   Date
                 </label>
                 <div className="relative flex items-center">
-                  <Calendar className="w-4 h-4 text-slate-500 absolute left-3 pointer-events-none" />
+                  <Calendar className="w-4 h-4 text-slate-500 absolute left-3 pointer-events-none" aria-hidden="true" />
                   <input
                     type="date"
                     id="log-date"
@@ -333,6 +334,7 @@ export const LogActivity: React.FC<LogActivityProps> = ({ logs, onAddLog, onDele
                   <p 
                     id="date-error" 
                     role="alert" 
+                    aria-live="assertive"
                     className="text-[10px] font-bold text-rose-500 mt-1.5 flex items-center gap-1"
                   >
                     <span>⚠️</span> {errors.date}
@@ -427,7 +429,7 @@ export const LogActivity: React.FC<LogActivityProps> = ({ logs, onAddLog, onDele
                   >
                     <div className="flex items-center gap-2.5">
                       <div className={`w-8 h-8 rounded-lg flex items-center justify-center border ${colorClasses[log.category]}`}>
-                        <Icon className="w-3.5 h-3.5" />
+                        <Icon className="w-3.5 h-3.5" aria-hidden="true" />
                       </div>
                       <div>
                         <div className="flex items-center gap-1.5">
@@ -454,8 +456,9 @@ export const LogActivity: React.FC<LogActivityProps> = ({ logs, onAddLog, onDele
                         onClick={() => onDeleteLog(log.id)}
                         className="p-1 text-slate-600 hover:text-rose-500 hover:bg-rose-500/10 rounded transition duration-200 opacity-0 group-hover:opacity-100 cursor-pointer focus-visible:opacity-100 focus-visible:ring-1 focus-visible:ring-rose-500 focus-visible:outline-none"
                         title="Delete entry"
+                        aria-label={`Delete ${log.subCategoryName} entry`}
                       >
-                        <Trash2 className="w-3 h-3" />
+                        <Trash2 className="w-3 h-3" aria-hidden="true" />
                       </button>
                     </div>
                   </div>

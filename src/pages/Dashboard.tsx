@@ -19,7 +19,7 @@ import {
   Cell,
   Legend,
 } from 'recharts'
-import { Car, Utensils, Zap, Trash2, ArrowRight, Award, ShoppingBag, Sparkles } from 'lucide-react'
+import { Car, Utensils, Zap, Trash2, ArrowRight, Award, ShoppingBag, Sparkles, Leaf } from 'lucide-react'
 
 interface DashboardProps {
   logs: ActivityLog[]
@@ -105,12 +105,33 @@ export const Dashboard: React.FC<DashboardProps> = ({ logs, settings, setActiveT
 
   return (
     <div className="space-y-6">
+      {/* Hero / Landing Header Section */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-emerald-950/40 via-slate-900/60 to-teal-950/30 border border-emerald-500/10 rounded-3xl p-6 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 transition-all duration-300 hover:border-emerald-500/20">
+        <div className="space-y-2 max-w-2xl">
+          <div className="inline-flex items-center gap-1.5 py-1 px-3 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-[9px] font-extrabold uppercase tracking-wider">
+            <span>The Everyday Optimizer Platform</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-none">
+            Carbonly
+          </h2>
+          <p className="text-xs font-extrabold text-emerald-400 tracking-wider uppercase">
+            Understand. Track. Reduce.
+          </p>
+          <p className="text-xs text-slate-300 font-medium leading-relaxed">
+            Carbonly is tailored specifically for the <strong>Everyday Optimizer</strong>—individuals looking to understand, track, and reduce their personal carbon footprints. By logging small everyday choices and applying personalized recommendations, you can take control of your climate impact and live sustainably.
+          </p>
+        </div>
+        <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 shadow-lg shadow-emerald-500/20">
+          <Leaf className="w-7 h-7 text-slate-950" aria-hidden="true" />
+        </div>
+      </div>
+
       {/* Welcome Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-extrabold text-white tracking-tight">
+          <h3 className="text-xl font-extrabold text-white tracking-tight">
             Hello, {settings.name} 👋
-          </h2>
+          </h3>
           <p className="text-xs text-slate-400 font-medium mt-0.5">
             Optimize your emissions against the global sustainable daily target of {SUSTAINABLE_DAILY_TARGET} kg.
           </p>

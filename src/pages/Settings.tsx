@@ -120,6 +120,7 @@ export const Settings: React.FC<SettingsProps> = ({
               <input
                 type="range"
                 id="set-target-slider"
+                aria-label="Drag to adjust daily target"
                 min="5"
                 max="50"
                 step="1"
@@ -244,8 +245,8 @@ export const Settings: React.FC<SettingsProps> = ({
 
           <div className="pt-3 border-t border-slate-800/40 flex items-center justify-between">
             {saveSuccess ? (
-              <span className="text-[10px] font-bold text-emerald-400 flex items-center gap-1">
-                <Check className="w-3.5 h-3.5" /> Profile Settings Saved
+              <span role="status" aria-live="polite" className="text-[10px] font-bold text-emerald-400 flex items-center gap-1">
+                <Check className="w-3.5 h-3.5" aria-hidden="true" /> Profile Settings Saved
               </span>
             ) : (
               <div />
@@ -271,7 +272,7 @@ export const Settings: React.FC<SettingsProps> = ({
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
                 Export Carbon Data
               </span>
-              <p className="text-[10px] text-slate-500 leading-normal font-semibold">
+              <p className="text-[10px] text-slate-400 leading-normal font-semibold">
                 Download your logged footprints database and settings profiles as a JSON file.
               </p>
               <button
@@ -289,7 +290,7 @@ export const Settings: React.FC<SettingsProps> = ({
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
                 Generate Mock Activity
               </span>
-              <p className="text-[10px] text-slate-500 leading-normal font-semibold">
+              <p className="text-[10px] text-slate-400 leading-normal font-semibold">
                 Generate a random 7-day log history to test the graphs instantly.
               </p>
               <button
@@ -316,7 +317,7 @@ export const Settings: React.FC<SettingsProps> = ({
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
                 Reset Application Cache
               </span>
-              <p className="text-[10px] text-slate-500 leading-normal font-semibold">
+              <p className="text-[10px] text-slate-400 leading-normal font-semibold">
                 Wipes all stored logs and triggers the onboarding screen again.
               </p>
 

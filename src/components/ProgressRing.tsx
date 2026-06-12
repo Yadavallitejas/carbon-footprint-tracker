@@ -38,7 +38,12 @@ export const ProgressRing: React.FC<ProgressRingProps> = ({ value, target }) => 
         {/* Outer subtle glow */}
         <div className={`absolute inset-4 rounded-full ${bgColor} ${glowColor} blur-xl`} />
 
-        <svg className="w-full h-full transform -rotate-90" viewBox="0 0 200 200">
+        <svg
+          className="w-full h-full transform -rotate-90"
+          viewBox="0 0 200 200"
+          role="img"
+          aria-label={`Daily carbon progress: ${value.toFixed(1)} kg consumed out of ${target} kg goal`}
+        >
           {/* Background circle */}
           <circle
             className="text-slate-800"

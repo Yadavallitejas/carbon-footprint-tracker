@@ -51,11 +51,11 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
         <div className="flex items-center justify-between border-b border-slate-850 pb-4">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-500/20">
-              <Leaf className="w-4 h-4 text-slate-950" />
+              <Leaf className="w-4 h-4 text-slate-950" aria-hidden="true" />
             </div>
             <div>
               <h1 className="text-sm font-extrabold text-white tracking-tight">Carbonly</h1>
-              <p className="text-[9px] text-slate-500 font-bold uppercase tracking-wider">Setup Wizard</p>
+              <p className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Setup Wizard</p>
             </div>
           </div>
           <div className="flex items-center gap-1.5 text-[10px] font-black text-slate-400 bg-slate-950 border border-slate-800 rounded-full py-1 px-3">
@@ -110,7 +110,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
               className="w-full inline-flex items-center justify-center gap-1.5 px-5 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-black text-xs rounded-2xl hover:brightness-110 active:scale-[0.98] transition-all duration-200 cursor-pointer shadow-lg shadow-emerald-500/10"
             >
               <span>Get Started</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </button>
           </div>
         )}
@@ -132,7 +132,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                   Your Name
                 </label>
                 <div className="relative flex items-center">
-                  <User className="w-4 h-4 text-slate-500 absolute left-3 pointer-events-none" />
+                  <User className="w-4 h-4 text-slate-500 absolute left-3 pointer-events-none" aria-hidden="true" />
                   <input
                     type="text"
                     id="onb-name"
@@ -150,7 +150,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                   Default Commute Method
                 </label>
                 <div className="relative flex items-center">
-                  <Car className="w-4 h-4 text-slate-500 absolute left-3 pointer-events-none" />
+                  <Car className="w-4 h-4 text-slate-500 absolute left-3 pointer-events-none" aria-hidden="true" />
                   <select
                     id="onb-commute"
                     value={carType}
@@ -174,7 +174,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                     Diet Choice
                   </label>
                   <div className="relative flex items-center">
-                    <Utensils className="w-4 h-4 text-slate-500 absolute left-3 pointer-events-none" />
+                    <Utensils className="w-4 h-4 text-slate-500 absolute left-3 pointer-events-none" aria-hidden="true" />
                     <select
                       id="onb-diet"
                       value={dietPreference}
@@ -195,7 +195,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                     Household Size
                   </label>
                   <div className="relative flex items-center">
-                    <Users className="w-4 h-4 text-slate-500 absolute left-3 pointer-events-none" />
+                    <Users className="w-4 h-4 text-slate-500 absolute left-3 pointer-events-none" aria-hidden="true" />
                     <input
                       type="number"
                       id="onb-household"
@@ -244,7 +244,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                 onClick={handleBack}
                 className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-slate-950 border border-slate-800 text-slate-300 font-bold text-xs rounded-2xl hover:bg-slate-900 cursor-pointer"
               >
-                <ArrowLeft className="w-4 h-4" />
+                <ArrowLeft className="w-4 h-4" aria-hidden="true" />
                 <span>Back</span>
               </button>
               <button
@@ -253,7 +253,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                 className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-black text-xs rounded-2xl hover:brightness-110 cursor-pointer"
               >
                 <span>Continue</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </button>
             </div>
           </div>
@@ -264,7 +264,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
           <div className="space-y-4 animate-fadeIn">
             <div className="space-y-2">
               <h2 className="text-lg font-extrabold text-white tracking-tight flex items-center gap-1.5">
-                <Shield className="w-5 h-5 text-emerald-400" />
+                <Shield className="w-5 h-5 text-emerald-400" aria-hidden="true" />
                 <span>Privacy & Offline Safety</span>
               </h2>
               <p className="text-xs text-slate-400 leading-relaxed font-medium">
@@ -276,7 +276,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
             <PrivacyNote />
 
             <div className="p-3 bg-emerald-500/5 border border-emerald-500/10 rounded-2xl flex items-center gap-3">
-              <Check className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+              <Check className="w-5 h-5 text-emerald-400 flex-shrink-0" aria-hidden="true" />
               <p className="text-[10px] text-emerald-400 font-semibold leading-normal">
                 Everything is configured! Your settings targets will fall back to default sustainable benchmarks (5.48 kg CO₂e) to measure progress.
               </p>
@@ -288,7 +288,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                 onClick={handleBack}
                 className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-slate-950 border border-slate-800 text-slate-300 font-bold text-xs rounded-2xl hover:bg-slate-900 cursor-pointer"
               >
-                <ArrowLeft className="w-4 h-4" />
+                <ArrowLeft className="w-4 h-4" aria-hidden="true" />
                 <span>Back</span>
               </button>
               <button
@@ -297,7 +297,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                 className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-black text-xs rounded-2xl hover:brightness-110 cursor-pointer shadow-lg shadow-emerald-500/10"
               >
                 <span>Start Tracking</span>
-                <Check className="w-4 h-4" />
+                <Check className="w-4 h-4" aria-hidden="true" />
               </button>
             </div>
           </div>

@@ -25,3 +25,13 @@ body {
   background-color: #020617; /* deep dark background matching layout */
   overflow-x: hidden;
 }
+
+/* Visible Focus Indicator for Keyboard Accessibility (WCAG 2.1 2.4.7) */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid #10b981 !important; /* emerald-500 */
+  outline-offset: 2px !important;
+}

@@ -118,7 +118,12 @@ export const CarbonChart: React.FC<CarbonChartProps> = ({ logs, dailyTarget }) =
       </div>
 
       <div className="relative">
-        <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto overflow-visible">
+        <svg
+          viewBox={`0 0 ${width} ${height}`}
+          className="w-full h-auto overflow-visible"
+          role="img"
+          aria-label="Stacked bar chart showing weekly carbon footprint history per day by category"
+        >
           {/* Horizontal Gridlines */}
           {[0, 0.25, 0.5, 0.75, 1].map((ratio, index) => {
             const gridVal = chartMax * ratio
