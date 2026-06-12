@@ -154,4 +154,4 @@ Carbonly is fully compliant with **WCAG 2.1 Level AA** standards:
 Check out the fully interactive, static-deployed application here:
 **https://carbon-footprint-trac.netlify.app/**
 
-[main image dasboard](asses/main.png)
+![main image dashboard](asses/main.png)
